@@ -18,8 +18,8 @@ public class Grilla {
     @Column(name="id")
     long id;
 
-    @Column(name="id_usuario")
-    long id_usuario;
+    @Column(name="idUsuario")
+    String idUsuario;
 
     @Column(name="grilla", length = 1000)
     String grilla;
@@ -32,9 +32,9 @@ public class Grilla {
 
     }
 
-    public Grilla(long id, long id_usuario, String grilla, String movimientos){
+    public Grilla(long id, String idUsuario, String grilla, String movimientos){
         this.id = id;
-        this.id_usuario = id_usuario;
+        this.idUsuario = idUsuario;
         this.grilla = grilla;
         this.movimientos = movimientos;
     }
@@ -55,12 +55,12 @@ public class Grilla {
         this.grilla = grilla;
     }
 
-    public long getIdUsuario(){
-        return this.id_usuario;
+    public String getIdUsuario(){
+        return this.idUsuario;
     }
 
-    public void SetIdUsuario(long id){
-        this.id_usuario = id;
+    public void SetIdUsuario(String id){
+        this.idUsuario = id;
     }
 
     public String getMovimientos(){
