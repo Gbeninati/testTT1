@@ -11,35 +11,32 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="usuario")
-public class Usuario {
+@Table(name="grilla")
+public class Grilla {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
     long id;
 
-    @Column(name="ruta")
-    String ruta;
+    @Column(name="id_usuario")
+    long id_usuario;
 
-    @Column(name="tiempos")
-    String tiempos;
+    @Column(name="grilla", length = 1000)
+    String grilla;
 
-    //@Column(name="grilla", length = 100000)
-    //String grilla;
+    @Column(name="movimientos", length = 10000)
+    String movimientos;
 
-    //@Column(name="movimientos", length = 10000)
-    //String movimientos;
 
-    public Usuario(){
+    public Grilla(){
 
     }
 
-    public Usuario(long id, String ruta, String tiempos){
+    public Grilla(long id, long id_usuario, String grilla, String movimientos){
         this.id = id;
-        this.ruta = ruta;
-        this.tiempos = tiempos;
-        //this.grilla = grilla;
-        //this.movimientos = movimientos;
+        this.id_usuario = id_usuario;
+        this.grilla = grilla;
+        this.movimientos = movimientos;
     }
 
     public long getId(){
@@ -50,29 +47,20 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getRuta(){
-        return this.ruta;
-    }
-
-    public void SetRuta(String ruta){
-        this.ruta = ruta;
-    }
-
-    public String getTiempos(){
-        return this.tiempos;
-    }
-
-    public void SetTiempos(String tiempos){
-        this.tiempos = tiempos;
-    }
-
-    /*
     public String getGrilla(){
         return this.grilla;
     }
 
     public void SetGrilla(String grilla){
         this.grilla = grilla;
+    }
+
+    public long getIdUsuario(){
+        return this.id_usuario;
+    }
+
+    public void SetIdUsuario(long id){
+        this.id_usuario = id;
     }
 
     public String getMovimientos(){
@@ -82,8 +70,6 @@ public class Usuario {
     public void SetMovimientos(String movimientos){
         this.movimientos = movimientos;
     }
-
-    */
 
 
 }
