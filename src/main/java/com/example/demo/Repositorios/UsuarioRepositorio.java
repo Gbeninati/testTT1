@@ -17,5 +17,9 @@ public interface UsuarioRepositorio extends JpaRepository<Usuario, Long>{
 
     public abstract boolean deleteById(long id_estudiante);
 
+    public abstract Usuario findTopByOrderByIdDesc();
+
+    public abstract void deleteAll();
+
     //public abstract boolean saveOrUpdate(Usuario estudiante);
 }

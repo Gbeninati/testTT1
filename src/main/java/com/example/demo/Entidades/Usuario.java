@@ -24,18 +24,22 @@ public class Usuario {
     @Column(name="tiempos")
     String tiempos;
 
-    @Column(name="grilla", length = 10000)
+    @Column(name="grilla", length = 100000)
     String grilla;
+
+    @Column(name="movimientos", length = 10000)
+    String movimientos;
 
     public Usuario(){
 
     }
 
-    public Usuario(long id, String ruta, String tiempos, String grilla){
+    public Usuario(long id, String ruta, String tiempos, String grilla, String movimientos){
         this.id = id;
         this.ruta = ruta;
         this.tiempos = tiempos;
         this.grilla = grilla;
+        this.movimientos = movimientos;
     }
 
     public long getId(){
@@ -68,6 +72,14 @@ public class Usuario {
 
     public void SetGrilla(String grilla){
         this.grilla = grilla;
+    }
+
+    public String getMovimientos(){
+        return this.movimientos;
+    }
+
+    public void SetMovimientos(String movimientos){
+        this.movimientos = movimientos;
     }
 
 

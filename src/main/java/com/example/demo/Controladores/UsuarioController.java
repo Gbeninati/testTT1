@@ -32,7 +32,10 @@ public class UsuarioController {
         return servicio.obtenerAll();
     }
 
-    
+    @GetMapping("/getLastId")
+    public Usuario getLastId(){
+        return servicio.lastUser();
+    }
 
     @PostMapping("/crear")
     public long agregarUsuario(@RequestBody Usuario user){
@@ -42,6 +45,11 @@ public class UsuarioController {
     @DeleteMapping("/eliminar/{id}")
     public boolean eliminarUsuario(@PathVariable("id") long id){
         return servicio.eliminar(id);
+    }
+
+    @DeleteMapping("/eliminar/deleteAll")
+    public void borrarTodosUsuarios(){
+        servicio.eliminarAll();
     }
 
     

@@ -33,6 +33,23 @@ public class UsuarioServicio {
         }
     }
 
+    public Usuario lastUser(){
+        return repositorio.findTopByOrderByIdDesc();
+    }
+
+    /*
+    public void eliminarAll(){
+        List<Usuario> usuarios = repositorio.findAll();
+        for (int i = 0; i < usuarios.size(); i++) {
+            repositorio.deleteById(usuarios.get(i).getId());
+        }
+    }
+    */
+
+    public void eliminarAll(){
+        repositorio.deleteAll();
+    }
+
     public List<Usuario> obtenerAll(){
         return repositorio.findAll();
     }
