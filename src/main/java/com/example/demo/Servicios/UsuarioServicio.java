@@ -15,13 +15,9 @@ public class UsuarioServicio {
     @Qualifier("repositoriousuario")
     private UsuarioRepositorio repositorio;
 
-    public long crear(Usuario user){
-        try{
-            repositorio.save(user);
-            return user.getId();
-        } catch (Exception e) {
-            return -1;
-        }
+    public Usuario crear(Usuario user){
+        repositorio.save(user);
+        return user;   
     }
 
     public boolean eliminar(long id){

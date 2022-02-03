@@ -38,7 +38,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/crear")
-    public long agregarUsuario(@RequestBody Usuario user){
+    public Usuario agregarUsuario(@RequestBody Usuario user){
         return servicio.crear(user);
     }
 
