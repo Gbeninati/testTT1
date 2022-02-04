@@ -18,10 +18,10 @@ public class Usuario {
     @Column(name="id")
     long id;
 
-    @Column(name="ruta")
+    @Column(name="ruta", length = 10000)
     String ruta;
 
-    @Column(name="tiempos")
+    @Column(name="tiempos", length = 10000)
     String tiempos;
 
     //@Column(name="grilla", length = 100000)
