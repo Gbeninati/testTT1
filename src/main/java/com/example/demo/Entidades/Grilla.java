@@ -27,16 +27,20 @@ public class Grilla {
     @Column(name="movimientos", length = 10000)
     String movimientos;
 
+    @Column(name="orden")
+    String orden;
+
 
     public Grilla(){
 
     }
 
-    public Grilla(long id, String idUsuario, String grilla, String movimientos){
+    public Grilla(long id, String idUsuario, String grilla, String movimientos, String orden){
         this.id = id;
         this.idUsuario = idUsuario;
         this.grilla = grilla;
         this.movimientos = movimientos;
+        this.orden = orden;
     }
 
     public long getId(){
@@ -69,6 +73,14 @@ public class Grilla {
 
     public void SetMovimientos(String movimientos){
         this.movimientos = movimientos;
+    }
+
+    public String getOrden(){
+        return this.orden;
+    }
+
+    public void SetOrden(String orden){
+        this.orden = orden;
     }
 
 
